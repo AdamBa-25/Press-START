@@ -1,62 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wait</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
 
-<style>
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-#countdown {
-    font-size: 3rem;
-    background: #222;
-    padding: 30px 50px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.15);
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="countdown">Loading...</div>
+<div class="container">
 
-<script>
+    <nav class="menu">
+        <a href="#">Test</a>
+        <a href="#">Test 2</a>
+        <a href="#">Test 3</a>
+    </nav>
 
-const endDate = new Date(2026, 4, 13, 18, 0, 0);
+    <div class="separator"></div>
 
+    <div class="box"></div>
 
-function updateCountdown() {
-    const now = new Date();
-    const diff = endDate - now;
-
-    if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "Terminé";
-        clearInterval(timer);
-        return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("countdown").innerHTML =
-        `${days}j : ${hours}h : ${minutes}m : ${seconds}s`;
-}
-
-updateCountdown();
-const timer = setInterval(updateCountdown, 1000);
-</script>
+</div>
 
 </body>
 </html>
