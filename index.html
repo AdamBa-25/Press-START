@@ -22,17 +22,18 @@ body {
     background: #222;
     padding: 30px 50px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 </style>
 </head>
 <body>
 
-<div id="countdown">Chargement...</div>
+<div id="countdown">Loading...</div>
 
 <script>
-const endDate = new Date();
-endDate.setDate(endDate.getDate() + 10);
+
+const endDate = new Date(2026, 4, 13, 18, 0, 0);
+
 
 function updateCountdown() {
     const now = new Date();
