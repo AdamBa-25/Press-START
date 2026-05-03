@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wait</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#countdown {
+    font-size: 3rem;
+    background: #222;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+</style>
+</head>
+<body>
+
+<div id="countdown">Chargement...</div>
+
+<script>
+const endDate = new Date();
+endDate.setDate(endDate.getDate() + 10);
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = endDate - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "Terminé";
+        clearInterval(timer);
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("countdown").innerHTML =
+        `${days}j : ${hours}h : ${minutes}m : ${seconds}s`;
+}
+
+updateCountdown();
+const timer = setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
