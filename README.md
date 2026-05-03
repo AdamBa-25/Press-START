@@ -1,3 +1,3 @@
 # A simple test
 
-[Access to site](www.adam-web.dev)
+[Access to site](https://adam-web.dev/)
