@@ -1,31 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout simple</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press START</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <nav class="menu">
-        <a href="#">Entrée 1</a>
-        <a href="#">Entrée 2</a>
-        <a href="#">Entrée 3</a>
-    </nav>
-    <div class="separator"></div>
-</header>
+  <header class="hero">
+    <div class="wrap">
+      <h1>Press<span> START</span></h1>
+      <p>Bienvenue sur mon site ! N'hésitez pas à tester mes jeux<span class="cursor">▌</span></p>
+    </div>
+  </header>
 
-<main class="main-content">
-    <div class="box"><img src="cmonsite.jpg"></div>
-</main>
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar wrap">
+    <a class="pixel-panel nav-link is-active" href="index.html">Jeux</a>
+    <a class="pixel-panel nav-link" href="apropos.html">À propos</a>
+  </nav>
+
+  <main class="wrap">
+    <div class="games">
+
+      <!-- ===== CARTE 1 — dispo ===== -->
+      <div class="pixel-panel card">
+        <div class="thumb">
+
+          <span>test</span>
+
+        </div>
+        <div class="card-body">
+          <span class="tag tag-disponible">DISPONIBLE</span>
+          <h2>BUTTON FACTORY</h2>
+          <p>Appuyez sur un bouton pour générer d'autres boutons afin d'en générer encore plus.</p>
+          <a class="play is-active" href="games/ButtonFactory/ButtonFactoryIndex.html">JOUER →</a>
+        </div>
+      </div>
+
+      <!-- ===== CARTE 2 — a venir ===== -->
+      <div class="pixel-panel card">
+        <div class="thumb">
+          <span>test</span>
+        </div>
+        <div class="card-body">
+          <span class="tag tag-venir">À VENIR</span>
+          <h2>Enigma</h2>
+          <p>Résolvez les énigmes de l'entreprise VAL Incorportation et découvrez tous ces secrets</p>
+          <span class="play is-soon">BIENTÔT</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    fait avec amour par Adam BAJIC — <span id="year"></span>
+  </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press START - à propos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>Press<span> START</span></h1>
+      <p>Bienvenue sur mon site ! N'hésitez pas à tester mes jeux<span class="cursor">▌</span></p>
+    </div>
+  </header>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar wrap">
+    <a class="pixel-panel nav-link" href="index.html">Jeux</a>
+    <a class="pixel-panel nav-link is-active" href="apropos.html">À propos</a>
+  </nav>
+
+  <main class="wrap">
+    <div class="about">
+      <div class="pixel-panel photo">
+        <img src="img/photo_nuit_Adam.jpeg" alt="Photo de Adam BAJIC">
+      </div>
+
+      <div class="bio">
+        <h2>Adam BAJIC</h2>
+        <p>
+            Salut, moi c'est Adam. J'ai actuellement <span id="ageAdam"></span> ans et je suis en plein dans mes études de BUT informatique.
+            <br>
+            J'aime la programmation, l'horreur et la culture d'internet.<br>
+            Mon jeu préféré est <a href="https://store.steampowered.com/app/1229490/ULTRAKILL/" target="_blank" rel="noopener">ULTRAKILL</a> et mon album préféré est 
+            <br><a href="https://www.youtube.com/watch?v=5eF6hNLp8IQ" target="_blank" rel="noopener">Lift Your Skinny Fists Like Antennas to Heaven </a> 
+            de Godspeed You! Black Emperor. (46:16 fait partie de la meilleure expérience auditive que je n'aie jamais vécue).
+
+            <br>
+
+            Vous aurez peut-être remarqué la notion de "VAL Incorporation" au sein du site. Il s'agit d'une 
+            entreprise fictive dont je suis le co-fondateur avec deux camarades et que j'ai créée lors de ma première année de BUT pour un projet.
+            Certains jeux sont même liés à son histoire.
+
+            <br>
+
+            Bonne découverte !
+        </p>
+        <div class="links">
+          <a class="play is-active" href="https://github.com/AdamBa-25/" target="_blank" rel="noopener">GITHUB</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    fait avec amour par Adam BAJIC — <span id="year"></span>
+  </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const BIRTHDATE = '2007-07-05';
+ 
+  const birth = new Date(BIRTHDATE);
+  const today = new Date();
+  let age = today.getFullYear() - birth.getFullYear();
+  const hasHadBirthdayThisYear =
+    today.getMonth() > birth.getMonth() ||
+    (today.getMonth() === birth.getMonth() && today.getDate() >= birth.getDate());
+  if (!hasHadBirthdayThisYear) age--;
+
+  document.getElementById('ageAdam').textContent = age;
+</script>
+
+</body>
+</html>
